@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Death Road</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <div class="container">
+
+        <section class="menu section">
+            <h1 class="menu__headline headline">Death Road</h1>
+            <div class="menu__button-block button-block">
+                <button class="menu__button menu__button--start button button--mobile" type="button">Start Game</button>
+                <button class="menu__button menu__button--rules button button--mobile" type="button">Rules</button>
+                <button class="menu__button menu__button--high-score button button--mobile" type="button">High Score</button>
+                <button class="menu__button menu__button--settings button button--mobile" type="button">Settings</button>
+            </div>
+        </section>
+
+        <section class="game section" hidden>
+            <div class="game__text-block">
+                <span class="game__text game__text--time">Time:<br> <span class="game__time"></span></span>
+                <span class="game__text game__text--lives">Lives:<br> <span class="game__lives"></span></span>
+                <span class="game__text game__text--level">Level:<br> <span class="game__level"></span></span>
+                <span class="game__text game__text--points">Points:<br> <span class="game__points"></span></span>
+            </div>
+
+            <canvas class="game__canvas"></canvas>
+
+            <div class="game__button-block">
+                <div class="game__game-stop-block">
+                    <img class="game__button game__button--exit" src="./pictures/exit.svg" alt="exit">
+                    <img class="game__button game__button--pause" src="./pictures/pause.svg" alt="pause">
+                </div>
+                <div class="game__control-block">
+                    <img class="game__button game__button--up" src="./pictures/arrow.svg" alt="up">
+                    <div class="game__wrapper">
+                        <img class="game__button game__button--left" src="./pictures/arrow.svg" alt="left">
+                        <img class="game__button game__button--right" src="./pictures/arrow.svg" alt="right">
+                    </div>
+                    <img class="game__button game__button--down" src="./pictures/arrow.svg" alt="down">
+                </div>
+            </div>
+        </section>
+
+        <section class="rules section" hidden>
+            <h2 class="rules__headline headline">Rules</h2>
+            <div class="rules__container">
+                <p class="rules__text">The goal of the game is to gather as many points as you possibly 
+                    can while avoiding each of the obstacles you encounter during gameplay.</p>
+            </div>        
+            <button class="rules__button back-to-menu-button button button--mobile" type="button">Back</button>
+        </section>
+
+        <section class="high-score section" hidden>
+            <h2 class="high-score__headline headline">High Score</h2>
+            <div class="high-score__table-block"></div>
+            <button class="high-score__button back-to-menu-button button button--mobile" type="button">Back</button>
+        </section>
+
+        <section class="settings section" hidden>
+            <h2 class="settings__headline headline">Settings</h2>
+            <div class="settings__button-block button-block">
+                <button class="settings__button settings__button--sounds button button--mobile button--selected" type="button">Sounds</button>
+                <button class="settings__button settings__button--vibration button button--mobile" type="button">Vibration</button>
+                <button class="settings__button back-to-menu-button button button--mobile" type="button">Back</button>
+            </div>
+        </section>
+
+        <section class="result section" hidden>
+            <h2 class="result__headline headline">Your Result</h2>
+            <span class="result__text"></span>
+            <form class="result__form">
+                <input class="form__input" type="text" placeholder="Nickname" hidden>
+                <button class="form__button" type="submit">OK</button>
+            </form>
+        </section>
+
+        <div class="popup" hidden>
+            <p class="popup__text">The progress will be lost.<br>Do you want to exit?</p>
+            <div class="popup__button-block button-block">
+                <button class="popup__button popup__yes-button" type="button">Yes</button>
+                <button class="popup__button popup__no-button" type="button">No</button>
+            </div>
+        </div>
+        <div class="overlay" hidden></div>
+
+    </div>
+    
+    <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-database.js"></script>
+    <script src="js/main.js" type="module"></script>
+</body>
+</html>
